@@ -8,7 +8,7 @@ let _days = _hours * 24;
 //Make sure newly added dates are in ascending chronological order in the array.
 const eventDates = ["2023/01/01"];
 
-$(document).ready(() => (timer = setInterval(countdown, 1000)));
+window.addEventListener("load", () => (timer = setInterval(countdown, 1000)));
 
 function countdown() {
   let currentDate = new Date();
@@ -21,15 +21,15 @@ function countdown() {
     return;
   }
   if (i > eventDates.length) {
-    $(".timer").hide("medium");
+    document.querySelector(".timer").style.display = "none";
   }
   let days = Math.floor(dateDifference / _days);
   let hours = Math.floor((dateDifference % _days) / _hours);
   let minutes = Math.floor((dateDifference % _hours) / _minutes);
   let seconds = Math.floor((dateDifference % _minutes) / _seconds);
 
-  $("#days span").text(days);
-  $("#hours span").text(hours);
-  $("#minutes span").text(minutes);
-  $("#seconds span").text(seconds);
+  document.querySelector("#days span").innerText = days;
+  document.querySelector("#hours span").innerText = hours;
+  document.querySelector("#minutes span").innerText = minutes;
+  document.querySelector("#seconds span").innerText = seconds;
 }
