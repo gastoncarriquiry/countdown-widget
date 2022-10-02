@@ -1,6 +1,6 @@
 # Countdown Widget
 
-This repository contains a countdown widget developed with Javascript and jQuery. At the moment dates input is only available through code manipulation.
+This repository contains a countdown widget developed with Javascript. At the moment dates input is only available through code manipulation.
 
 ## Features
 
@@ -8,6 +8,7 @@ This repository contains a countdown widget developed with Javascript and jQuery
 - When all dates are completed the timer hides.
 
 ## Installation
+
 Clone the project
 
 ```bash
@@ -32,8 +33,10 @@ Want to contribute? Great! There are a few options that could be developed:
 - Whatever you may think of! Suggesstions are encouraged.
 
 ## Author
- Gaston Carriquiry - [Contact me!](mailto:gastoncarriquiry@gmail.com)
+
+Gaston Carriquiry - [Contact me!](mailto:gastoncarriquiry@gmail.com)
 
 ### 🔗 Links
+
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](http://gastoncarriquiry.glitch.me/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/gastoncarriquiry)
