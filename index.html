@@ -6,19 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countdown</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="js/code.js"></script>
   </head>
   <body>
     <main>
       <section>
         <div id="countdown">
-          <h1>Countdown</h1>
-          <p class="timer" id="days"><span></span><br />days</p>
-          <p class="timer" id="hours"><span></span><br />hours</p>
-          <p class="timer" id="minutes"><span></span><br />minutes</p>
-          <p class="timer" id="seconds"><span></span><br />seconds</p>
+          <h1 id="event-title">Countdown</h1>
+          <p id="event-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio exercitationem veniam
+            eaque dicta eos dignissimos unde molestias deserunt natus explicabo quibusdam eum
+            aliquam voluptatum minus, possimus deleniti eligendi asperiores laboriosam?
+          </p>
+          <div id="timer-container">
+            <p class="timer" id="days"><span></span><br />days</p>
+            <p class="timer" id="hours"><span></span><br />hours</p>
+            <p class="timer" id="minutes"><span></span><br />minutes</p>
+            <p class="timer" id="seconds"><span></span><br />seconds</p>
+          </div>
+        </div>
+        <div id="add-event">
+          <h2>Add your event</h2>
+          <form>
+            <div class="input">
+              <label for="title">Title:</label>
+              <input type="text" id="title" placeholder="Event title" />
+            </div>
+            <div class="input">
+              <label for="description">Description (optional):</label>
+              <textarea id="description" placeholder="Event description"></textarea>
+            </div>
+            <div class="input">
+              <label for="date">Date:</label>
+              <input type="date" id="date" />
+            </div>
+            <button type="submit" id="btn-add">Add Date</button>
+          </form>
         </div>
       </section>
     </main>
+    <script src="js/code.js"></script>
   </body>
 </html>

@@ -27,9 +27,9 @@ Run it live!
 
 Want to contribute? Great! There are a few options that could be developed:
 
-- User interface for adding new event dates.
-- Automatic date sorting (currently dates have to be manually ordered in the event dates array).
-- Event information -- right now events only display dates, but it could include event title, description, etc.
+- Interface to display current and next events.
+- Add custom toasts or alerts for better communication of events of information, errors, success, etc.
+- Connect the events to localStorage or to a database so they can persist even if browser is closed.
 - Whatever you may think of! Suggesstions are encouraged.
 
 ## Author
