@@ -28,6 +28,7 @@ Run it live!
 Want to contribute? Great! There are a few options that could be developed:
 
 - Interface to display current and next events.
+- Make the site responsive throughout all devices.
 - Add custom toasts or alerts for better communication of events of information, errors, success, etc.
 - Add the possibility to set the time of event.
 - Connect the events to localStorage or to a database so they can persist even if browser is closed.

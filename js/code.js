@@ -9,12 +9,18 @@ btnAdd.addEventListener("click", (e) => addEvent(e));
 
 //Date format "YYYY/MM/DD"
 const events = [{ title: "Event Title", description: "Event description", date: "2024/01/01" }];
+// const events = [];
 
 window.addEventListener("load", () => {
+  if (events.length !== 0) {
+    setTimeout(() => (document.querySelector("#countdown").style.display = "block"), 1000);
+    sortEvents();
+    timer = setInterval(() => {
+      countdown(), renderNextUp();
+    }, 1000);
+    setEventInformation();
+  }
   emptyForm();
-  sortEvents();
-  timer = setInterval(countdown, 1000);
-  setEventInformation();
 });
 
 function setEventInformation() {
@@ -27,28 +33,48 @@ function setEventInformation() {
 }
 
 function countdown() {
-  if (events.length !== 0) {
-    let currentDate = new Date();
-    let finalDate = new Date(events[i].date);
-    let dateDifference = finalDate - currentDate;
-    if (dateDifference < 0) {
-      finalDate = new Date(events[i + 1]);
-      i++;
-      return;
-    }
-    if (i > events.length) {
-      document.querySelector(".timer").style.display = "none";
-    }
-    let days = Math.floor(dateDifference / _days);
-    let hours = Math.floor((dateDifference % _days) / _hours);
-    let minutes = Math.floor((dateDifference % _hours) / _minutes);
-    let seconds = Math.floor((dateDifference % _minutes) / _seconds);
+  let currentDate = new Date();
+  let finalDate = new Date(events[i].date);
+  let dateDifference = finalDate - currentDate;
+  if (dateDifference < 0) {
+    finalDate = new Date(events[i + 1]);
+    i++;
+    return;
+  }
+  if (i > events.length) {
+    document.querySelector(".timer").style.display = "none";
+  }
+  let days = Math.floor(dateDifference / _days);
+  let hours = Math.floor((dateDifference % _days) / _hours);
+  let minutes = Math.floor((dateDifference % _hours) / _minutes);
+  let seconds = Math.floor((dateDifference % _minutes) / _seconds);
 
-    document.querySelector("#days span").innerText = days;
-    document.querySelector("#hours span").innerText = hours;
-    document.querySelector("#minutes span").innerText = minutes;
-    document.querySelector("#seconds span").innerText = seconds;
-  } else return;
+  document.querySelector("#days span").innerText = days;
+  document.querySelector("#hours span").innerText = hours;
+  document.querySelector("#minutes span").innerText = minutes;
+  document.querySelector("#seconds span").innerText = seconds;
+}
+
+function renderNextUp() {
+  const nextEvents = document.querySelector("#next-events");
+  nextEvents.style.display = "flex";
+  let currentDate = new Date();
+  nextEvents.innerHTML = events
+    .map((event) => {
+      let finalDate = new Date(event.date);
+      let dateDifference = finalDate - currentDate;
+
+      let days = Math.floor(dateDifference / _days);
+      let hours = Math.floor((dateDifference % _days) / _hours);
+      let minutes = Math.floor((dateDifference % _hours) / _minutes);
+      let seconds = Math.floor((dateDifference % _minutes) / _seconds);
+
+      return `<div class="event">
+            <h2>${event.title}</h2>
+            <p>In ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds.</p>
+          </div>`;
+    })
+    .join(``);
 }
 
 function addEvent(e) {

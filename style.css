@@ -26,11 +26,17 @@ section {
     background-color: var(--background-color);
 }
 
+#countdown {
+    display: none;
+}
+
 #event-title {
     text-align: center;
+    width: 75%;
+    margin: auto;
     text-transform: uppercase;
     font-weight: 800;
-    font-size: 50px;
+    font-size: 42px;
     margin-bottom: 20px;
     color: var(--primary-color);
 }
@@ -141,4 +147,41 @@ section {
     background-color: var(--contrast-color);
     color: var(--primary-color);
     border: 3px solid var(--primary-color);
+}
+
+#next-events {
+    position: absolute;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+}
+
+#next-events .event {
+    background-color: var(--secondary-color);
+    width: 20vw;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+#next-events .event h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+#next-events .event p {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+#next-events .event:first-child {
+    opacity: 1;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+    color: var(--contrast-color);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
 }
