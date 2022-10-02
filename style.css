@@ -36,7 +36,7 @@ section {
 }
 
 #event-description {
-    text-align: left;
+    text-align: center;
     color: var(--primary-color);
     width: 50%;
     margin: auto;

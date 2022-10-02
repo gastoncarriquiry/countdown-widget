@@ -8,13 +8,10 @@ const btnAdd = document.querySelector("#btn-add");
 btnAdd.addEventListener("click", (e) => addEvent(e));
 
 //Date format "YYYY/MM/DD"
-//Make sure newly added dates are in ascending chronological order in the array.
-const events = [
-  { title: "Event Title", description: "Event description", date: "2023/01/01" },
-  { title: "Event Title 2", description: "Event description 2", date: "2023/01/02" },
-];
+const events = [{ title: "Event Title", description: "Event description", date: "2024/01/01" }];
 
 window.addEventListener("load", () => {
+  emptyForm();
   sortEvents();
   timer = setInterval(countdown, 1000);
   setEventInformation();
@@ -69,6 +66,7 @@ function addEvent(e) {
       description: eventDescription,
       date: eventDate,
     });
+    emptyForm();
     sortEvents();
     setEventInformation();
   }
@@ -80,4 +78,10 @@ function sortEvents() {
     var d = new Date(b.date);
     return c - d;
   });
+}
+
+function emptyForm() {
+  document.querySelector("#title").value = "";
+  document.querySelector("#description").value = "";
+  document.querySelector("#date").value = "";
 }
